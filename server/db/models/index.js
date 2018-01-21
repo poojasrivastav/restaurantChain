@@ -9,8 +9,8 @@ const CartDetail = require('./cartDetail');
  *
  *    BlogPost.belongsTo(User)
  */
-Product.belongsToMany(Category, {through: productCategory});
-Category.belongsToMany(Product, {through: productCategory});
+Product.belongsToMany(Category, {through: 'productCategory'});
+Category.belongsToMany(Product, {through: 'productCategory'});
 
 
 Review.belongsTo(Product);
@@ -19,10 +19,10 @@ Product.hasMany(Review);
 User.hasMany(Review);
 Review.belongsTo(User);
 
-CartDetail.belongsTo('User');
+CartDetail.belongsTo(User);
 
-Product.belongsToMany('CartDetail', {through: 'cartItem'});
-CartDetail.belongsToMany('Product', {through: 'cartItem'});
+Product.belongsToMany(CartDetail, {through: 'cartItem'});
+CartDetail.belongsToMany(Product, {through: 'cartItem'});
 
 
 /**

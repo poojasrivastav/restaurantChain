@@ -9,3 +9,5 @@ totalAmount: {
 }
 
 })
+
+module.exports = CartDetail;
